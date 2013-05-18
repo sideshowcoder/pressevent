@@ -14,5 +14,7 @@ module Pressevent
       # Don't create fixtures by default and use the minitest spec syntax
       g.test_framework :mini_test, :spec => true, :fixture => false
     end
+
+    config.assets.initialize_on_precompile = false
   end
 end
