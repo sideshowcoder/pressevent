@@ -12,6 +12,8 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'twitter-bootstrap-rails'
+gem 'devise', '3.0.0.rc'
+gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
