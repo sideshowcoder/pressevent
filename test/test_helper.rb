@@ -5,6 +5,7 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 
 require "launchy"
+load "#{Rails.root}/test/test_seeds.rb"
 
 class ActiveSupport::TestCase
   fixtures :all
