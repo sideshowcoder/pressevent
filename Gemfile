@@ -29,4 +29,5 @@ group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'pry'
   gem 'launchy'
+  gem 'zeus'
 end
