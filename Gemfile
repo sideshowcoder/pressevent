@@ -24,9 +24,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'thin'
 gem 'foreman'
 gem 'minitest-rails'
-gem 'launchy'
 
 group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'pry'
+  gem 'launchy'
 end
