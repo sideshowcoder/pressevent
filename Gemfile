@@ -12,6 +12,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'twitter-bootstrap-rails'
+gem 'simple_form'
 gem 'devise', '3.0.0.rc'
 gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
 
@@ -29,5 +30,5 @@ group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'pry'
   gem 'launchy'
-  gem 'zeus'
+  gem 'zeus', '0.13.4.pre2'
 end
