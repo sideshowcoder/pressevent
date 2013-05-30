@@ -2,5 +2,6 @@
   <%= f.input :name %>
   <%= f.input :url %>
   <%= f.input :api_key %>
-  <%= f.input :auto_checking %>
+  <%= f.input :auto_checking, boolean_style: :nested %>
+  <%= f.submit 'Register Wordpress Installation', class: 'btn btn-primary' %>
 <% end %>

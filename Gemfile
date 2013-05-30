@@ -12,7 +12,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'twitter-bootstrap-rails'
-gem 'simple_form'
+gem 'simple_form', '3.0.0.rc'
 gem 'devise', '3.0.0.rc'
 gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
 

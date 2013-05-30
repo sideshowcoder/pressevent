@@ -6,7 +6,15 @@ require "minitest/rails/capybara"
 
 require "#{Rails.root}/test/fixtures/seeds.rb"
 
+Dir["#{Rails.root}/test/support/*.rb"].each {|file| require file }
+
 class ActiveSupport::TestCase
   fixtures :all
+end
+
+class Capybara::Rails::TestCase
+  before do
+    Capybara.reset_sessions!
+  end
 end
 
