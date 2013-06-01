@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://wp-test.dev/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>getCoreUpdatesAvailable</methodName><params><param><value><string>U3sMgZPcClgFkvR486dIQZ6cDynhHYlk</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '192'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Jun 2013 13:36:18 GMT
+      X-Powered-By:
+      - PHP/5.4.11
+      Content-Length:
+      - '330'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <struct>
+          <member><name>installed</name><value><string>3.5</string></value></member>
+          <member><name>current</name><value><string>3.5.1</string></value></member>
+        </struct>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Jun 2013 13:36:18 GMT
+- request:
+    method: post
+    uri: http://wp-test.dev/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>getPluginUpdatesAvailable</methodName><params><param><value><string>U3sMgZPcClgFkvR486dIQZ6cDynhHYlk</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '194'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Jun 2013 13:36:18 GMT
+      X-Powered-By:
+      - PHP/5.4.11
+      Content-Length:
+      - '457'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+          <value><struct>
+          <member><name>plugin</name><value><string>Akismet</string></value></member>
+          <member><name>installed</name><value><string>2.5.6</string></value></member>
+          <member><name>current</name><value><string>2.5.7</string></value></member>
+        </struct></value>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Jun 2013 13:36:18 GMT
+recorded_with: VCR 2.5.0

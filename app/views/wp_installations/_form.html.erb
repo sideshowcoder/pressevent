@@ -1,0 +1,8 @@
+<%= simple_form_for @wp_installation do |f| %>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.input :api_key %>
+  <%= f.input :auto_checking, boolean_style: :nested %>
+  <%= f.submit (f.object.new_record? ? 'Register' : 'Update'), class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', wp_installations_path, class: 'btn' %>
+<% end %>

@@ -51,6 +51,8 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
+    crack (0.4.0)
+      safe_yaml (~> 0.9.0)
     daemons (1.1.9)
     devise (3.0.0.rc)
       bcrypt-ruby (~> 3.0)
@@ -82,6 +84,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.23)
     minitest (4.7.4)
@@ -101,6 +104,8 @@ GEM
       minitest-matchers (~> 1.2)
       minitest-metadata (~> 0.3)
       minitest-rails (~> 0.9.1)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.7.3)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
@@ -130,6 +135,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.4)
+    safe_yaml (0.9.3)
     sass (3.2.9)
     sass-rails (4.0.0.rc1)
       railties (>= 4.0.0.beta, < 5.0)
@@ -176,8 +182,12 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    vcr (2.5.0)
     warden (1.2.1)
       rack (>= 1.0)
+    webmock (1.11.0)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     zeus (0.13.4.pre2)
@@ -197,6 +207,7 @@ DEPENDENCIES
   less-rails
   minitest-rails
   minitest-rails-capybara
+  mocha
   pg
   pry
   rails (= 4.0.0.rc1)
@@ -208,4 +219,6 @@ DEPENDENCIES
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
+  vcr
+  webmock
   zeus (= 0.13.4.pre2)

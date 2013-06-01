@@ -9,6 +9,7 @@ feature "UserFlow Feature Test" do
   scenario "user sign in" do
     sign_in_user
     page.must_have_content 'Signed in successfully.'
+    page.must_have_content 'Wordpress installations'
   end
 
   scenario "user log out" do

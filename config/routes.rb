@@ -1,7 +1,9 @@
 Pressevent::Application.routes.draw do
   devise_for :users
 
-  resources :wordpress_instances, only: [:index, :new, :create]
+  resources :wp_installations do
+    resources :reports, only: [:new]
+  end
 
   root :to => 'high_voltage/pages#show', :id => 'home'
 end

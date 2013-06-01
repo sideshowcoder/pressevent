@@ -28,6 +28,9 @@ gem 'minitest-rails'
 
 group :development, :test do
   gem 'minitest-rails-capybara'
+  gem 'mocha', require: false
+  gem 'webmock', require: false
+  gem 'vcr'
   gem 'pry'
   gem 'launchy'
   gem 'zeus', '0.13.4.pre2'

@@ -1,4 +1,4 @@
-class WordpressInstance < ActiveRecord::Base
+class WPInstallation < ActiveRecord::Base
   belongs_to :user
   validates :url, presence: true
   validates :user, presence: true

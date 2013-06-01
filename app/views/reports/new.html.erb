@@ -1,0 +1,14 @@
+<h1>Update Report for <%= @report.name %></h1>
+<table class="table table-hover" id="wp-installations-list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @report.core_updates %>
+    <%= render @report.plugin_updates %>
+  </tbody>
+</table>
