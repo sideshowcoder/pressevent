@@ -17,6 +17,12 @@ feature "UserFlow Feature Test" do
     sign_out_user
     page.must_have_content 'Signed out successfully.'
   end
+
+  scenario "user edit" do
+    sign_in_user
+    click_on 'Edit profile'
+    page.must_have_content 'Edit my profile'
+  end
 end
 
 def sign_out_user
