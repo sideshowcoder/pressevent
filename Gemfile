@@ -33,5 +33,6 @@ group :development, :test do
   gem 'vcr'
   gem 'pry'
   gem 'launchy'
+  gem 'mailcatcher', require: false
   gem 'zeus', '0.13.4.pre2'
 end
