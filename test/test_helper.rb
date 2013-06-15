@@ -8,6 +8,10 @@ require 'vcr'
 
 Dir["#{Rails.root}/test/support/*.rb"].each {|file| require file }
 
+class MiniTest::Spec
+  register_spec_type(/UserUpdateNotifier/, ActiveSupport::TestCase)
+end
+
 class ActiveSupport::TestCase
   fixtures :all
 end

@@ -1,0 +1,24 @@
+Update Report for <%= @reports.map(&:name).join(',') %>
+
+<% @reports.each do |r| %>
+  <%= r.name %>
+  <% r.core_updates.each do |u| %>
+    Name <%= u.name %>
+    Installed <%= u.installed %>
+    Current <%= u.current %>
+  <% end %>
+
+  <% r.plugin_updates.each do |u| %>
+    Name <%= u.name %>
+    Installed <%= u.installed %>
+    Current <%= u.current %>
+  <% end %>
+<% end %>
+
+Make sure you take for the core updates quickly!
+
+Pressevent don't like to see you get hurt :(
+
+----
+http://pressevent.herokuapp.com
+

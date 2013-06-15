@@ -23,6 +23,29 @@ describe Report do
     Report.new(wp_installation: @wp).generate
   end
 
+  describe 'are updates available' do
+    before do
+      @raw_updates = { core: [], plugins: [] }
+      client = stub(available_updates: @raw_updates)
+      WPUpdaterAPIClient.stubs(:new).with(@wp.url, @wp.api_key).returns(client)
+    end
+
+    it 'reports false for core and plugins empty' do
+      Report.new(wp_installation: @wp).generate!.updates_available?.must_equal false
+    end
+
+    it 'reports true for core non-empty' do
+      @raw_updates.merge! core: [{ installed: 'x', current: 'y'}]
+      Report.new(wp_installation: @wp).generate!.updates_available?.must_equal true
+    end
+
+    it 'reports true for core or plugins non-empty' do
+      plugin_update = { plugin: 'xyz', installed: 'x.x.x', current: 'y.y.y'}
+      @raw_updates.merge! plugins: [plugin_update]
+      Report.new(wp_installation: @wp).generate!.updates_available?.must_equal true
+    end
+  end
+
   describe 'generate update lists' do
     before do
       @raw_updates = { core: [], plugins: [] }
