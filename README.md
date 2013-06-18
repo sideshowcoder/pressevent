@@ -1,3 +1,5 @@
+[![Build Status](https://magnum.travis-ci.com/sideshowcoder/pressevent.png?token=eWqyYZsYyfqua9PJ9ddd&branch=master)](https://magnum.travis-ci.com/sideshowcoder/pressevent)
+
 Pressevent
 ==========
 
