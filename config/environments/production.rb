@@ -90,4 +90,8 @@ Pressevent::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Google analytics
+  GA.tracker = "UA-42006491-1"
+
 end
