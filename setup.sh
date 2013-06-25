@@ -1,19 +1,26 @@
 #!/bin/bash
 set -e
 
-if [ ! -f .env ]; then
-  cp env.sample .env
-fi
+echo 'setting up env file...'
+cp env.sample .env
 
-if [ ! -f ./config/database.yml ]; then
-  cp ./config/database.yml.sample ./config/database.yml
-fi
-
+echo 'install installing dependecies...'
 bundle install
 
-createuser --superuser --host=localhost pressevent
-
+echo 'setting up database...'
+createuser --superuser --host=localhost postgres
 rake db:create
 rake db:schema:load
 rake db:seed
 rake db:test:prepare
+
+echo 'self test...'
+rake minitest:all
+
+echo 'setting up heroku remotes...'
+heroku git:remote -a pressevent --remote production
+heroku git:remote -a pressevent-staging --remote staging
+
+
+
+
