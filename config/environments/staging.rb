@@ -78,7 +78,7 @@ Pressevent::Application.configure do
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = { host: 'pressevent.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'pressevent-staging.herokuapp.com' }
   Mail.register_interceptor(StagingEmailInterceptor.new)
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
