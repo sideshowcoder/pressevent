@@ -1,4 +1,3 @@
-require 'rake'
 require 'test_helper'
 
 describe 'Pressevent::AutomaticUpdateReportTaskTest' do

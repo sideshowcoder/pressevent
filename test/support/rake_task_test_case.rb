@@ -1,5 +1,6 @@
 class RakeTaskTestCase < ActiveSupport::TestCase
   before do
+    require 'rake'
     Rake::Task.define_task :environment
     load rake_task_load_path
   end
