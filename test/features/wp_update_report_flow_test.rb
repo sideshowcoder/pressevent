@@ -4,7 +4,7 @@ require 'rake'
 feature 'WPReportFlow Feature Test' do
   before do
     VCR.insert_cassette 'wp-updater-api'
-    load File.expand_path("#{Rails.root}/lib/tasks/automatic_update_report.rake")
+    load File.expand_path("#{Rails.root}/lib/tasks/pressevent/automatic_update_report.rake")
     Rake::Task.define_task :environment
     sign_in_user
   end
