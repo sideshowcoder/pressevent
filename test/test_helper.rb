@@ -3,8 +3,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
-require 'mocha/setup'
 require 'vcr'
+
 
 Dir["#{Rails.root}/test/support/*.rb"].each {|file| require file }
 
@@ -26,3 +26,9 @@ class Capybara::Rails::TestCase
   end
 end
 
+# HELPERS
+def zeus?
+  ENV.keys.grep(/ZEUS/).any?
+end
+
+require 'mocha/setup'
