@@ -1,4 +1,6 @@
 class ReportMailer < ActionMailer::Base
+  helper :report
+
   default from: 'report@pressevent.herokuapp.com'
 
   def daily(email, reports)

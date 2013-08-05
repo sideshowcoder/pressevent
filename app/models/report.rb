@@ -7,6 +7,7 @@ class Report
 
   attr_accessor :wp_installation, :updates
   delegate :name, to: :wp_installation
+  delegate :url, to: :wp_installation
 
   def initialize *args
     super

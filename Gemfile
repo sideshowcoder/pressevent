@@ -17,6 +17,7 @@ gem 'devise', '3.0.0.rc'
 gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
 gem 'rails_12factor' # required by heroku for rails 4
 gem 'google-analytics-rails'
+gem 'maildown'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
