@@ -29,6 +29,7 @@ gem 'foreman'
 gem 'minitest-rails'
 
 group :development, :test do
+  gem "mail_view"
   gem 'minitest-rails-capybara'
   gem 'mocha', require: false
   gem 'webmock', require: false

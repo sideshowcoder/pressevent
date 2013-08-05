@@ -87,6 +87,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_view (1.0.3)
+      tilt
     mailcatcher (0.2.4)
       eventmachine
       haml
@@ -238,6 +240,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  mail_view
   mailcatcher
   minitest-rails
   minitest-rails-capybara

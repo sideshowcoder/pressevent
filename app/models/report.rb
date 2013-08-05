@@ -10,7 +10,7 @@ class Report
 
   def initialize *args
     super
-    self.updates = []
+    self.updates ||= []
   end
 
   def core_updates
