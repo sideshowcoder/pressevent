@@ -3,16 +3,33 @@
 Pressevent
 ==========
 
-Get notifications for your running wordpress instances
+Get notifications for your running wordpress instances, and never miss an
+important update again. [Pressevent](http://pressevent.herokuapp.com) is hosted
+on heroku.
+
+How?
+----
+Pressevent will monitor registered wordpress installations for updates and sent
+out email reports once a day. Since It's not nice to give away the keys to the
+kingdom pressevent works with [WP Updater
+API](http://wordpress.org/plugins/wp-updater-api/) which allows acces to just
+the information about updates via an API key. It's easily installed and
+configured like any other Wordpress Plugin.
 
 Getting started with development
 --------------------------------
-Start by running
+Install all the dependencies via bundler first
 
-    $ ./setup.sh
+    $ bundle install
 
-this will setup the postgres user and create the needed databases. It also copies
-the needed .env file in place for you to edit.
+Setup the database (requires postgres to be installed)
+
+    $ createuser --superuser --host=localhost postgres
+
+Create the needed configuration files
+
+    $ cp sample.env .env
+    $ cp config/database.yml.sample config/database.yml
 
 Now run the tests via
 
@@ -22,22 +39,23 @@ Everything should work fine, and you can start a development server via
 
     $ foreman start -f Procfile.development
 
-Deploying to Production
------------------------
-Pressevent runs on heroku, so
+Deploying
+---------
+Pressevent runs on heroku, so you just need to create the app with Sendgrid as a
+plugin activated, and then
 
-    $ git push production master
+    $ git push heroku master
 
-takes care of deploy
+takes care of deploy. To have the daily report emails sent just setup a cronjob
+via Heroku Scheduler to run
 
-Deploying to Staging
---------------------
-As for production this is run on heroku
+    $ rake pressevent:automatic_update_report
 
-    $ git push staging master
+Just to be save set a secret token as well
 
-CI
---
-CI builds are done via Travis, so if you don't need to build make sure you
-include [ci skip] in your commit message
+    $ heroku config:set SECRET_KEY_BASE=`rake secret`
 
+Info
+----
+Licensed under MIT License. Copyright (c) 2013 Sideshowcoder. See LICENSE.txt for
+further details.
