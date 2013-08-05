@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pressevent::Application.config.secret_key_base = '21860e585a085e0fe5b0b26df97d449361254928f3490a97769b9aa74dadc63626e06d334e07e3db896535712cd29845c0f715b629d3a7b6fe5f4b4a3848b4f2'
+Pressevent::Application.config.secret_key_base = ENV['SECRET_KEY_BASE'] || '21860e585a085e0fe5b0b26df97d449361254928f3490a97769b9aa74dadc63626e06d334e07e3db896535712cd29845c0f715b629d3a7b6fe5f4b4a3848b4f2'
