@@ -28,9 +28,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'thin'
 gem 'foreman'
 gem 'minitest-rails'
+gem "mail_view"
 
 group :development, :test do
-  gem "mail_view"
   gem 'minitest-rails-capybara'
   gem 'mocha', require: false
   gem 'webmock', require: false
