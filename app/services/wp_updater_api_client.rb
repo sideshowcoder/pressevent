@@ -18,7 +18,7 @@ class WPUpdaterAPIClient
   end
 
   def available_core_updates
-    [client.call('getCoreUpdatesAvailable', api_key)]
+    Array(client.call('getCoreUpdatesAvailable', api_key))
   end
 
   def available_plugin_updates
