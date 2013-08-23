@@ -18,7 +18,8 @@ class WPUpdaterAPIClient
   end
 
   def available_core_updates
-    Array(client.call('getCoreUpdatesAvailable', api_key))
+    update = client.call('getCoreUpdatesAvailable', api_key)
+    update.empty? ? [] : [update]
   end
 
   def available_plugin_updates

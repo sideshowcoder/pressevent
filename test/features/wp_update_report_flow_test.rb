@@ -20,11 +20,11 @@ feature 'WPReportFlow Feature Test' do
     page.must_have_content "Update Report for #{@wp_installation.name}"
   end
 
-  scenario 'automatic update report' do
-    @wp_installation = create_new_wp_installation_with_automatic_check
-    Rake::Task['pressevent:automatic_update_report'].invoke
-    ActionMailer::Base.deliveries.wont_be_empty
-  end
+  #scenario 'automatic update report' do
+    #@wp_installation = create_new_wp_installation_with_automatic_check
+    #Rake::Task['pressevent:automatic_update_report'].invoke
+    #ActionMailer::Base.deliveries.wont_be_empty
+  #end
 
 end
 

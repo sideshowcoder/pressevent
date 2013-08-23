@@ -16,12 +16,16 @@ describe WPUpdaterAPIClient do
 
     it 'gets updates from remote' do
       updates = @client.available_updates
-      updates[:core].wont_be_nil
-      updates[:plugins].wont_be_nil
+      expected_core = [{ "installed" => "3.5", "current" => "3.5.1" }]
+      expected_plugins = [{ "plugin" => "Akismet",
+                            "installed" => "2.5.6",
+                            "current" => "2.5.7"}]
+      updates[:core].must_equal expected_core
+      updates[:plugins].must_equal expected_plugins
     end
 
     it 'gets the core version' do
-      @client.core_version.wont_be_nil
+      @client.core_version.must_equal "installed" => "3.5", "current" => "3.5.1"
     end
   end
 
