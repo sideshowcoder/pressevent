@@ -38,6 +38,17 @@ feature 'WPReportFlow Feature Test' do
       ActionMailer::Base.deliveries.wont_be_empty
     end
   end
+
+  feature "report without updates" do
+    before { VCR.insert_cassette "filmspieler-updater-api" }
+
+    scenario "report without updates says so" do
+      @wp_installation = create_wp_installation_without_updates
+      visit wp_installations_path
+      request_report_for_installation @wp_installation
+      page.must_have_content "Everything is up-to-date!"
+    end
+  end
 end
 
 def request_report_for_installation(wp)
