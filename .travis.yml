@@ -17,7 +17,7 @@ after_success:
   - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
   - heroku keys:clear
   - yes | heroku keys:add
-  - yes | git push heroku master
+  - yes | git push heroku $TRAVIS_BRANCH
 env:
   global:
     secure: aM8i/Wb9KAts4PiV0K02UZatc5kOWBrljovYJ+IvcwaJ9pCc3S5ooe0ekcqTd5xlu85QoUtfXl/W8exAiwXfvIB3lk7W5Yp/UP9+jh5pgecI3BuEOv/0oa+x9h7sbWHt9KPlzWCuTxBKHL+9gspIgmyS5oWdv4KEeVkkgMcPaIg=
