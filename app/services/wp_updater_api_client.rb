@@ -1,6 +1,9 @@
 require 'xmlrpc/client'
 
 class WPUpdaterAPIClient
+  INVALID_CREDENTIAL_RESPONSES = ["Invalid API Key"]
+  class InvalidCredentialsException < StandardError; end
+
   attr_accessor :api_key, :client
 
   def initialize(url, key)
@@ -18,16 +21,26 @@ class WPUpdaterAPIClient
   end
 
   def available_core_updates
-    update = client.call('getCoreUpdatesAvailable', api_key)
+    update = api_call('getCoreUpdatesAvailable')
     update.empty? ? [] : [update]
   end
 
   def available_plugin_updates
-    client.call('getPluginUpdatesAvailable', api_key)
+    api_call('getPluginUpdatesAvailable')
   end
 
   def core_version
-    client.call('getCoreVersion', api_key)
+    api_call('getCoreVersion')
+  end
+
+  private
+  def api_call(name)
+    resp = client.call(name, api_key)
+    if INVALID_CREDENTIAL_RESPONSES.include? resp
+      raise InvalidCredentialsException.new(resp)
+    else
+      resp
+    end
   end
 end
 

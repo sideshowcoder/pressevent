@@ -21,12 +21,6 @@ class UserUpdateNotifier
   end
 
   def generated_reports
-    reports.map { |r|
-      begin
-        r.generate!
-      rescue Report::GenerationError
-        # noop
-      end
-    }.compact
+    reports.map(&:generate).compact
   end
 end

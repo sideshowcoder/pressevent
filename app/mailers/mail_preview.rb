@@ -10,7 +10,8 @@ class MailPreview < MailView
 
     one = Report.new(wp_installation: wp_one, updates: updates)
     two = Report.new(wp_installation: wp_two, updates: updates)
-    reports = [one, two]
+    three = ErrorReport.new("Invalid API Key", "test invalid", one.url)
+    reports = [one, two, three]
 
     mail = ReportMailer.daily("me@example.com", reports)
   end

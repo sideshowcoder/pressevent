@@ -1,3 +1,9 @@
+class ErrorReport < Struct.new(:message, :name, :url)
+  def updates_available?
+    true
+  end
+end
+
 class Report
   class GenerationError < StandardError; end
 
@@ -28,8 +34,8 @@ class Report
 
   def generate
     generate!
-  rescue GenerationError
-    false
+  rescue GenerationError => e
+    ErrorReport.new(e.message, name, url)
   end
 
   def generate!

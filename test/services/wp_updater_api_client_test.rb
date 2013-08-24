@@ -29,6 +29,19 @@ describe WPUpdaterAPIClient do
     end
   end
 
+  describe "invalid api key" do
+    before do
+      VCR.insert_cassette "wp-updater-api-invalid-key"
+      url = 'http://wp-test.dev'
+      api_key = 'invalid_key'
+      @client = WPUpdaterAPIClient.new(url, api_key)
+    end
+
+    it "does raise an error" do
+      -> { @client.available_updates }.must_raise WPUpdaterAPIClient::InvalidCredentialsException
+    end
+  end
+
   describe 'with no updates available' do
     before do
       VCR.insert_cassette 'filmspieler-updater-api'

@@ -1,17 +1,25 @@
-Pressevent Update Report 
+Pressevent Update Report
 =========================
 
-Hey, there are some updates available for <%= link_to_reports @reports %>
+Hey, there are some updates available for <%= link_to_reports @reports %>,
+and some problems with <%= link_to_error_reports @reports %>.
 
 <% @reports.each do |r| %>
+  <% if r.is_a? ErrorReport %>
+  There was a problem generating the report for <%= r.name %>, <%= r.message %>
+
+  -------------------------
+    <% next %>
+  <% end %>
+
   Available updates for  <%= r.name %>
 
   Name | currently installed | available
   <% r.core_updates.each do |u| %>
-  <%= u.name %> | <%= u.installed %> | <%= u.current %> 
+  <%= u.name %> | <%= u.installed %> | <%= u.current %>
   <% end %>
   <% r.plugin_updates.each do |u| %>
-  <%= u.name %> | <%= u.installed %> | <%= u.current %> 
+  <%= u.name %> | <%= u.installed %> | <%= u.current %>
   <% end %>
 
   -------------------------
@@ -19,5 +27,5 @@ Hey, there are some updates available for <%= link_to_reports @reports %>
 
 Make sure you take care of the core updates quickly, because Pressevent don't like to see you get hurt :(.
 
-http://pressevent.herokuapp.com 
+http://pressevent.herokuapp.com
 
