@@ -5,3 +5,17 @@ before_script:
   - psql -c 'create database pressevent_test;' -U postgres
   - rake db:migrate
 script: rake minitest:all
+after_success:
+  - if [[ "$TRAVIS_PULL_REQUEST" == "true" ]]; then echo "Pull request. No deployment!"; exit 0; fi
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then git remote add heroku git@heroku.com:pressevent-staging.git; fi
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - echo "Host heroku.com" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  - heroku keys:clear
+  - yes | heroku keys:add
+  - yes | git push heroku master
+env:
+  global:
+    secure: aM8i/Wb9KAts4PiV0K02UZatc5kOWBrljovYJ+IvcwaJ9pCc3S5ooe0ekcqTd5xlu85QoUtfXl/W8exAiwXfvIB3lk7W5Yp/UP9+jh5pgecI3BuEOv/0oa+x9h7sbWHt9KPlzWCuTxBKHL+9gspIgmyS5oWdv4KEeVkkgMcPaIg=
