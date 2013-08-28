@@ -1,8 +1,7 @@
 Pressevent Update Report
 =========================
 
-Hey, there are some updates available for <%= link_to_reports @reports %>,
-and some problems with <%= link_to_error_reports @reports %>.
+Hey, there are some updates available for <%= link_to_reports @reports %><% if has_error_reports?(@reports) %>, and some problems with <%= link_to_error_reports @reports %><% end %>.
 
 <% @reports.each do |r| %>
   <% if r.is_a? ErrorReport %>

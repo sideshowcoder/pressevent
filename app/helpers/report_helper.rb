@@ -13,4 +13,8 @@ module ReportHelper
     }.compact
   end
 
+  def has_error_reports?(reports)
+    reports.any? { |r| r.is_a? ErrorReport }
+  end
+
 end
