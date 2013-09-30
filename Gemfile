@@ -25,7 +25,7 @@ group :doc do
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'thin'
+gem 'unicorn'
 gem 'foreman'
 gem 'minitest-rails'
 gem "mail_view"
