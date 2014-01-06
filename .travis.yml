@@ -5,19 +5,16 @@ before_script:
   - psql -c 'create database pressevent_test;' -U postgres
   - rake db:migrate
 script: rake minitest:all
-after_success:
-  - if [[ "$TRAVIS_PULL_REQUEST" == "true" ]]; then echo "Pull request. No deployment!"; exit 0; fi
-  - if [[ "$TRAVIS_BRANCH" == "staging" ]]; then git remote add heroku git@heroku.com:pressevent-staging.git; fi
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then git remote add heroku git@heroku.com:pressevent.git; fi
-  - git remote -v | grep heroku || exit 0
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - echo "Host heroku.com" >> ~/.ssh/config
-  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "   CheckHostIP no" >> ~/.ssh/config
-  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - heroku keys:clear
-  - yes | heroku keys:add
-  - yes | git push heroku $TRAVIS_BRANCH:master
-env:
-  global:
-    secure: aM8i/Wb9KAts4PiV0K02UZatc5kOWBrljovYJ+IvcwaJ9pCc3S5ooe0ekcqTd5xlu85QoUtfXl/W8exAiwXfvIB3lk7W5Yp/UP9+jh5pgecI3BuEOv/0oa+x9h7sbWHt9KPlzWCuTxBKHL+9gspIgmyS5oWdv4KEeVkkgMcPaIg=
+deploy:
+  provider: heroku
+  buildpack: ruby
+  api_key:
+    master:
+      secure: Jg1oQUGfMKMMAPp49hJr/GkPJx9FEJHFOKUzrWz5FY356cc8iOVKBW9K6tTIzAOTUeWpGOIpHcOdvRrjW8Yvb8KKnIIliSB037E/H0jtdhSb3SNJhks5zes2SV1lveOkTJiTQdp8psacKniwCK4Mws0gBs27LZICNt6Ofh4LFT0=
+    staging:
+      secure: ZrHuYxJWWZUn7PnpJxgLGqqvQLHykjzOOmr8RWimYIIjS7h2IQZWSt1S2S/7Ge64waE36KTGxWn+8kRTaSdtRfHh50Z8bOKOhaq7VFHdm53hm4mtSmEeqfe/1lRR46UmNP8WfaIBq8qizmLmnxJGJ2b/LSexiE+cUVM6jfE4Hso=
+  app:
+    master: pressevent
+    staging: pressevent-staging
+  on:
+    repo: sideshowcoder/pressevent
