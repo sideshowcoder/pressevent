@@ -7,7 +7,6 @@ before_script:
 script: bundle exec rake minitest:all
 deploy:
   provider: heroku
-  buildpack: ruby
   api_key:
     master:
       secure: Jg1oQUGfMKMMAPp49hJr/GkPJx9FEJHFOKUzrWz5FY356cc8iOVKBW9K6tTIzAOTUeWpGOIpHcOdvRrjW8Yvb8KKnIIliSB037E/H0jtdhSb3SNJhks5zes2SV1lveOkTJiTQdp8psacKniwCK4Mws0gBs27LZICNt6Ofh4LFT0=
