@@ -3,8 +3,8 @@ rvm:
   - 2.0.0
 before_script:
   - psql -c 'create database pressevent_test;' -U postgres
-  - rake db:migrate
-script: rake minitest:all
+  - bundle exec rake db:migrate
+script: bundle exec rake minitest:all
 deploy:
   provider: heroku
   buildpack: ruby
