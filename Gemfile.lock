@@ -211,7 +211,7 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.2)
       coffee-rails
-    twitter-bootstrap-rails (2.2.8)
+    twitter-bootstrap-rails (2.2.7)
       actionpack (>= 3.1)
       execjs
       rails (>= 3.1)
@@ -262,7 +262,7 @@ DEPENDENCIES
   simple_form
   therubyracer
   turbolinks
-  twitter-bootstrap-rails (~> 2.2.8)
+  twitter-bootstrap-rails (= 2.2.7)
   uglifier
   unicorn
   vcr

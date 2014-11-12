@@ -1,0 +1,21 @@
+Requested Update Report from Pressevent
+=======================================
+
+<% if @report.updates_available? %>
+  Hey, there are some updates available for <%= link_to @report.name, @report.url %>
+
+  Name | currently installed | available
+  <% @report.core_updates.each do |u| %>
+    <%= u.name %> | <%= u.installed %> | <%= u.current %>
+  <% end %>
+  <% @report.plugin_updates.each do |u| %>
+    <%= u.name %> | <%= u.installed %> | <%= u.current %>
+  <% end %>
+
+  Make sure you take care of the core updates quickly, because Pressevent don't like to see you get hurt :(.
+<% else %>
+  Currently there are no updates available, have a great day!
+<% end %>
+
+http://pressevent.herokuapp.com
+

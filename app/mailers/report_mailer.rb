@@ -7,4 +7,9 @@ class ReportMailer < ActionMailer::Base
     @reports = reports
     mail to: email, subject: 'Pressevent wordpress update reports'
   end
+
+  def requested(email, report)
+    @report = report
+    mail to: email, subject: 'Pressevent wordpress requested update report'
+  end
 end

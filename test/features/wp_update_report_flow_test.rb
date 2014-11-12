@@ -30,7 +30,8 @@ feature 'WPReportFlow Feature Test' do
       @wp_installation = create_new_wp_installation
       visit wp_installations_path
       request_report_for_installation @wp_installation
-      page.must_have_content "Update Report for #{@wp_installation.name}"
+      page.must_have_content "Send report email."
+      ActionMailer::Base.deliveries.wont_be_empty
     end
 
     scenario 'automatic update report' do

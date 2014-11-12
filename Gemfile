@@ -8,7 +8,7 @@ gem 'pg'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'twitter-bootstrap-rails', "~> 2.2.8"
+gem 'twitter-bootstrap-rails', "= 2.2.7"
 gem 'therubyracer',  platforms: :ruby
 gem 'coffee-rails'
 gem 'sass-rails'

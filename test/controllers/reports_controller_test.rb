@@ -11,7 +11,7 @@ describe ReportsController do
       Report.any_instance.stubs(:core_updates).returns([])
       Report.any_instance.stubs(:plugin_updates).returns([])
       get :new, wp_installation_id: wp_installations(:my_wordpress)
-      assert_template :new
+      flash[:notice].must_equal 'Send report email.'
     end
 
     it 'flashes error when report could not be generated fails' do
