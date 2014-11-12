@@ -1,19 +1,16 @@
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.1.4
 before_script:
   - psql -c 'create database pressevent_test;' -U postgres
   - bundle exec rake db:migrate
-script: bundle exec rake minitest:all
+script: RAILS_ENV=test bundle exec rake test:all
 deploy:
   provider: heroku
   api_key:
     master:
       secure: Jg1oQUGfMKMMAPp49hJr/GkPJx9FEJHFOKUzrWz5FY356cc8iOVKBW9K6tTIzAOTUeWpGOIpHcOdvRrjW8Yvb8KKnIIliSB037E/H0jtdhSb3SNJhks5zes2SV1lveOkTJiTQdp8psacKniwCK4Mws0gBs27LZICNt6Ofh4LFT0=
-    staging:
-      secure: ZrHuYxJWWZUn7PnpJxgLGqqvQLHykjzOOmr8RWimYIIjS7h2IQZWSt1S2S/7Ge64waE36KTGxWn+8kRTaSdtRfHh50Z8bOKOhaq7VFHdm53hm4mtSmEeqfe/1lRR46UmNP8WfaIBq8qizmLmnxJGJ2b/LSexiE+cUVM6jfE4Hso=
   app:
     master: pressevent
-    staging: pressevent-staging
   on:
     repo: sideshowcoder/pressevent

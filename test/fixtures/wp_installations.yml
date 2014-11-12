@@ -1,7 +1,7 @@
 my_wordpress:
   name: My wordpress
-  url: 'http://example.com'
-  api_key: xyz123
+  url: 'http://localhost:9292'
+  api_key: ijX9nOdkfdjKvuXzqS3bzqL5jAMYkFwe
   auto_checking: true
   user: john_doe
 

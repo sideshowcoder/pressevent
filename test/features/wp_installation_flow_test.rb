@@ -22,14 +22,14 @@ feature "WPInstanllationFlow Feature Test" do
     create_new_wp_installation
     change_wordpress_installation_name_to WPInstallation.last, 'changed_name'
     page.must_have_content "Updated Wordpress installation."
-    page.must_have_content 'changed_name'
+    page.must_have_content "changed_name"
   end
 
   scenario "delete installation" do
     create_new_wp_installation
     delete_wordpress_installation(WPInstallation.last)
     page.must_have_content "Unregistered Wordpress installation."
-    page.wont_have_content 'Test'
+    page.wont_have_content "Test"
   end
 end
 

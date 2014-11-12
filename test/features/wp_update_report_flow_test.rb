@@ -1,5 +1,5 @@
-require 'test_helper'
 require 'rake'
+require 'test_helper'
 
 feature 'WPReportFlow Feature Test' do
   before do
@@ -9,11 +9,7 @@ feature 'WPReportFlow Feature Test' do
     sign_in_user
   end
 
-  after { VCR.eject_cassette }
-
   feature "successful report generations" do
-    before { VCR.insert_cassette "wp-updater-api-invalid-key" }
-
     scenario 'request a report for an invalid wordpress installation' do
       @wp_installation = create_new_invalid_wp_installation
       visit wp_installations_path
@@ -23,8 +19,6 @@ feature 'WPReportFlow Feature Test' do
   end
 
   feature "successful report generations" do
-    before { VCR.insert_cassette 'wp-updater-api' }
-
     scenario 'request a report' do
       @wp_installation = create_new_wp_installation
       visit wp_installations_path
@@ -36,17 +30,6 @@ feature 'WPReportFlow Feature Test' do
       @wp_installation = create_new_wp_installation(autocheck: true)
       Rake::Task['pressevent:automatic_update_report'].invoke
       ActionMailer::Base.deliveries.wont_be_empty
-    end
-  end
-
-  feature "report without updates" do
-    before { VCR.insert_cassette "filmspieler-updater-api" }
-
-    scenario "report without updates says so" do
-      @wp_installation = create_wp_installation_without_updates
-      visit wp_installations_path
-      request_report_for_installation @wp_installation
-      page.must_have_content "Everything is up-to-date!"
     end
   end
 end
