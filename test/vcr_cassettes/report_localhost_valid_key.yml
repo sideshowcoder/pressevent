@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>getCoreUpdatesAvailable</methodName><params><param><value><string>ijX9nOdkfdjKvuXzqS3bzqL5jAMYkFwe</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.1.4)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '192'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:9292
+      Connection:
+      - close
+      - close
+      X-Powered-By:
+      - PHP/5.6.2
+      Content-Length:
+      - '187'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Wed, 12 Nov 2014 16:13:04 +0000
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 16:13:04 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>getPluginUpdatesAvailable</methodName><params><param><value><string>ijX9nOdkfdjKvuXzqS3bzqL5jAMYkFwe</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.1.4)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '194'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:9292
+      Connection:
+      - close
+      - close
+      X-Powered-By:
+      - PHP/5.6.2
+      Content-Length:
+      - '457'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Wed, 12 Nov 2014 16:13:04 +0000
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+          <value><struct>
+          <member><name>plugin</name><value><string>Akismet</string></value></member>
+          <member><name>installed</name><value><string>3.0.2</string></value></member>
+          <member><name>current</name><value><string>3.0.3</string></value></member>
+        </struct></value>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 16:13:04 GMT
+recorded_with: VCR 2.9.3

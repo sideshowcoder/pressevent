@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>getCoreUpdatesAvailable</methodName><params><param><value><string>invalid_key</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.1.4)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '171'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:9292
+      Connection:
+      - close
+      - close
+      X-Powered-By:
+      - PHP/5.6.2
+      Content-Length:
+      - '190'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Wed, 12 Nov 2014 16:13:03 +0000
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <string>Invalid API Key</string>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 16:13:03 GMT
+recorded_with: VCR 2.9.3

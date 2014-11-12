@@ -9,7 +9,11 @@ feature 'WPReportFlow Feature Test' do
     sign_in_user
   end
 
-  feature "successful report generations" do
+
+  feature "unsuccessful report generations" do
+    before { VCR.insert_cassette "report_localhost_invalid_key" }
+    after { VCR.eject_cassette }
+
     scenario 'request a report for an invalid wordpress installation' do
       @wp_installation = create_new_invalid_wp_installation
       visit wp_installations_path
@@ -18,7 +22,10 @@ feature 'WPReportFlow Feature Test' do
     end
   end
 
-  feature "successful report generations" do
+  feature "report generations" do
+    before { VCR.insert_cassette "report_localhost_valid_key" }
+    after { VCR.eject_cassette }
+
     scenario 'request a report' do
       @wp_installation = create_new_wp_installation
       visit wp_installations_path

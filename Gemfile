@@ -25,7 +25,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
 gem 'bcrypt-ruby'
 gem 'unicorn'
 gem 'foreman'
@@ -37,6 +36,7 @@ group :development, :test do
   gem 'mocha', require: false
   gem 'webmock', require: false
   gem 'pry'
+  gem 'vcr'
   gem 'launchy'
   gem 'mailcatcher', require: false
 end
