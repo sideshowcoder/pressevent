@@ -9,7 +9,6 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'twitter-bootstrap-rails', "= 2.2.7"
-gem 'therubyracer',  platforms: :ruby
 gem 'coffee-rails'
 gem 'sass-rails'
 gem 'less-rails'
