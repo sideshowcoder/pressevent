@@ -30,6 +30,10 @@ gem 'foreman'
 gem 'minitest-rails'
 gem 'mail_view'
 
+group :assets do
+  gem 'therubyracer', platforms: :ruby
+end
+
 group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'mocha', require: false
