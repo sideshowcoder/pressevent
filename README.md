@@ -12,7 +12,7 @@ How?
 Pressevent will monitor registered wordpress installations for updates and sent
 out email reports once a day. Since It's not nice to give away the keys to the
 kingdom pressevent works with [WP Updater
-API](http://wordpress.org/plugins/wp-updater-api/) which allows acces to just
+API](http://wordpress.org/plugins/wp-updater-api/) which allows access to just
 the information about updates via an API key. It's easily installed and
 configured like any other Wordpress Plugin.
 
@@ -29,7 +29,6 @@ Setup the database (requires postgres to be installed)
 Create the needed configuration files
 
     $ cp sample.env .env
-    $ cp config/database.yml.sample config/database.yml
 
 Now run the tests via
 
