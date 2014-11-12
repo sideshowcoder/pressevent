@@ -8,10 +8,9 @@ gem 'pg'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'twitter-bootstrap-rails', "= 2.2.7"
+gem 'twitter-bootstrap-rails', "~> 2.2.8"
 gem 'coffee-rails'
 gem 'sass-rails'
-gem 'less-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'high_voltage'
@@ -29,10 +28,6 @@ gem 'unicorn'
 gem 'foreman'
 gem 'minitest-rails'
 gem 'mail_view'
-
-group :assets do
-  gem 'therubyracer', platforms: :ruby
-end
 
 group :development, :test do
   gem 'minitest-rails-capybara'
