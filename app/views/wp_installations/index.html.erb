@@ -18,7 +18,7 @@
         <td><%= wp.name %></td>
         <td><%= wp.url %></td>
         <td>
-          <%= link_to "Check for updates", new_wp_installation_report_path(wp), class: 'btn btn-mini btn-primary' %>
+          <%= link_to "Check for updates", new_wp_installation_report_path(wp), class: 'btn btn-mini btn-primary', data: { disable_with: "<i class='icon-spinner icon-spin'></i> fetching..." } %>
           <%= link_to "Edit", edit_wp_installation_path(wp), class: 'btn btn-mini' %>
           <%= link_to "Unregister", wp_installation_path(wp), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         </td>
