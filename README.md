@@ -32,7 +32,7 @@ Create the needed configuration files
 
 Now run the tests via
 
-    $ rake minitest:all
+    $ rake test:all
 
 Everything should work fine, and you can start a development server via
 
