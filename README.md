@@ -32,7 +32,7 @@ Create the needed configuration files
 
 Now run the tests via
 
-    $ rake test:all
+    $ RAILS_ENV=test rake test:all
 
 Everything should work fine, and you can start a development server via
 
