@@ -22,10 +22,6 @@ Install all the dependencies via bundler first
 
     $ bundle install
 
-Setup the database (requires postgres to be installed)
-
-    $ createuser --superuser --host=localhost postgres
-
 Create the needed configuration files
 
     $ cp sample.env .env
