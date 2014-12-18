@@ -4,7 +4,7 @@ development:
   database: pressevent_development
   pool: 5
   host: localhost
-  username: pressevent
+  username: postgres
   password:
 
 # Warning: The database defined as "test" will be erased and
