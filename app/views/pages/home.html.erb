@@ -1,59 +1,9 @@
-<% content_for :head do %>
-  <div class="jumbotron masthead">
-    <div class="container text-center">
-      <h1>Welcome to Pressevent!</h1>
-      <h3>Be sure your Wordpress is up2date.</h3>
+<h1>Keep your Wordpress updated!</h1>
 
-      <p>
-      <% if user_signed_in? %>
-        <%= link_to 'Dashboard', wp_installations_path, class: 'btn btn-primary btn-large' %>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path, class: 'btn btn-large'  %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-large'  %>
-      <% end %>
-      </p>
-    </div>
-  </div>
-<% end %>
-
-<div class='faq'>
-  <h3>How it works</h2>
-  <p><%= image_tag 'faq/wp-updater-api.png', alt: 'wp-updater-api plugin' %></p>
-  <p>
-  Install the <a href="http://wordpress.org/plugins/wp-updater-api/">wp-updater-api
-    plugin</a> so pressevent can track updates for your installation.
-  </p>
-
-  <p><%= image_tag 'faq/api_key.png', alt: 'Get the api key' %></p>
-  <p>
-  Note the api key for later, the api key ensures that you don't have to give
-  away the keys to the kingdom ie your wordpress username and password.
-  </p>
-
-  <p><%= image_tag 'faq/signup.png', alt: 'Signup for pressevent' %></p>
-  <p>
-  Signup for pressevent, so you can register your wordpress for update checking.
-  </p>
-
-  <p><%= image_tag 'faq/register_wordpress.png', alt: 'Register an installation' %></p>
-  <p>
-  Go to your dashboard and register a new wordpress installation. Enable
-  autochecking so you get an email when new updates are available, or check by
-  hand.
-  </p>
-
-  <p><%= image_tag 'faq/see_the_report.png', alt: 'The report' %></p>
-  <p>
-  See the report, watch out generating a fresh report might take a while, so no
-  need to constantly click the check for updates button, aye!
-  </p>
-
-  <p>
-  Enjoy and keep save! Pressevent is still alpha so be sure to sent
-  <%= mail_to "philipp.fehre+pressevent@gmail.com", "feedback"%>!
-  </p>
-
-</div>
+<p>
+Pressevent checks your all your Wordpress sites and notifies you of any
+available updates, for both plugins and Wordpress itself
+</p>
 
 
 

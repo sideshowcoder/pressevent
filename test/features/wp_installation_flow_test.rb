@@ -44,7 +44,7 @@ end
 def delete_wordpress_installation(wp_installation)
   visit wp_installations_path
   within "#wp_installation_#{wp_installation.id}" do
-    click_on 'Unregister'
+    click_on "Remove"
   end
 end
 

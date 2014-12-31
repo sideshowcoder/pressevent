@@ -1,8 +1,27 @@
-<%= simple_form_for @wp_installation do |f| %>
-  <%= f.input :name %>
-  <%= f.input :url %>
-  <%= f.input :api_key %>
-  <%= f.input :auto_checking, boolean_style: :nested %>
-  <%= f.submit (f.object.new_record? ? 'Register' : 'Update'), class: 'btn btn-primary' %>
-  <%= link_to 'Cancel', wp_installations_path, class: 'btn' %>
-<% end %>
+<div class="content-main">
+  <div class="border-form-div full-page-form">
+    <%= form_for @wp_installation do |f| %>
+      <%= form_errors f.object %>
+      <div class="input-group">
+        <%= f.label :name, "Site", class: "sr-only" %>
+        <span class="input-group-addon">Site</span>
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="input-group">
+        <%= f.label :url, class: "sr-only" %>
+        <span class="input-group-addon">http</span>
+        <%= f.text_field :url, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="input-group">
+        <%= f.label :api_key, class: "sr-only" %>
+        <span class="input-group-addon">Key&nbsp;</span>
+        <%= f.text_field :api_key, autofocus: true, class: "form-control" %>
+      </div>
+      <%= f.label :auto_checking, "Check this site for updates every day", class: "spaced-label" %>
+      <%= f.check_box :auto_checking %>
+      <%= f.submit (f.object.new_record? ? 'Register' : 'Update'), class: 'btn btn-primary btn-lg btn-block' %>
+    <% end %>
+    <%= link_to 'Cancel', wp_installations_path  %>
+  </div>
+</div>
+

@@ -9,7 +9,7 @@ feature "UserFlow Feature Test" do
   scenario "user sign in" do
     sign_in_user
     page.must_have_content 'Signed in successfully.'
-    page.must_have_content 'Wordpress installations'
+    page.must_have_css '#wp-installations-list'
   end
 
   scenario "user log out" do
@@ -21,7 +21,7 @@ feature "UserFlow Feature Test" do
   scenario "user edit" do
     sign_in_user
     click_on 'Edit profile'
-    page.must_have_content 'Edit my profile'
+    page.must_have_content 'Edit user profile'
   end
 end
 

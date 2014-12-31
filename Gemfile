@@ -7,21 +7,17 @@ gem 'pg'
 
 gem 'uglifier'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'twitter-bootstrap-rails', "~> 2.2.8"
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'sass-rails', '>= 3.2'
+gem 'autoprefixer-rails'
 gem 'coffee-rails'
-gem 'sass-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'high_voltage'
 gem 'rails_12factor' # required by heroku for rails 4
 gem 'google-analytics-rails'
 gem 'maildown'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
 gem 'bcrypt-ruby'
 gem 'unicorn'
