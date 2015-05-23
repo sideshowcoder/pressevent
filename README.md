@@ -53,5 +53,5 @@ Just to be save set a secret token as well
 
 Info
 ----
-Licensed under MIT License. Copyright (c) 2013 Sideshowcoder. See LICENSE.txt for
+Licensed under MIT License. Copyright (c) 2015 Sideshowcoder. See LICENSE.txt for
 further details.

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.2.1'
 
-gem 'rails', '4.1.7'
+gem 'rails', '4.2.1'
 gem 'pg'
 
 gem 'uglifier'
@@ -24,6 +24,10 @@ gem 'unicorn'
 gem 'foreman'
 gem 'minitest-rails'
 gem 'mail_view'
+
+group :development do
+  gem 'web-console', '~> 2.0'
+end
 
 group :development, :test do
   gem 'minitest-rails-capybara'
