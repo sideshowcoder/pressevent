@@ -1,31 +1,29 @@
-<h1>Wordpress installations</h1>
-
-<div class="nav nav-pills">
-  <li class="active"><%= link_to 'Register a new Installation', new_wp_installation_path %></li>
-</div>
-
-<table class="table table-hover" id="wp-installations-list">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>URL</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @wp_installations.each do |wp| %>
-      <tr id="wp_installation_<%= wp.id %>">
-        <td><%= wp.name %></td>
-        <td><%= wp.url %></td>
-        <td>
-          <%= link_to "Check for updates", new_wp_installation_report_path(wp), class: 'btn btn-mini btn-primary', data: { disable_with: "<i class='icon-spinner icon-spin'></i> fetching..." } %>
-          <%= link_to "Edit", edit_wp_installation_path(wp), class: 'btn btn-mini' %>
-          <%= link_to "Unregister", wp_installation_path(wp), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
-        </td>
+<div class="content-main">
+  <table class="table table-hover" id="wp-installations-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @wp_installations.each do |wp| %>
+        <tr id="wp_installation_<%= wp.id %>">
+          <td><%= wp.name %></td>
+          <td><%= wp.url %></td>
+          <td>
+            <%= link_to icon("refresh"), new_wp_installation_report_path(wp), data: { disable_with: "<i class='fa fa-refresh fa-spin'></i>" }, title: "Refresh" %>
+            <%= link_to icon("edit"), edit_wp_installation_path(wp), class: 'btn', title: "Edit" %>
+            <%= link_to icon("remove"), wp_installation_path(wp), method: :delete, data: { confirm: 'Are you sure?' }, title: "Remove" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+  <span class="inner-align">
+    <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>'), new_wp_installation_path %>
+  </span>
 
-
+</div>

@@ -30,9 +30,10 @@ Now run the tests via
 
     $ RAILS_ENV=test rake test:all
 
-Everything should work fine, and you can start a development server via
+Everything should work fine, and you can start a [development
+server](http://localhost:3000) and [mailcatcher](http://localhost:1080) via
 
-    $ foreman start -f Procfile.development
+    $ rake development:server
 
 Deploying
 ---------
@@ -52,5 +53,5 @@ Just to be save set a secret token as well
 
 Info
 ----
-Licensed under MIT License. Copyright (c) 2013 Sideshowcoder. See LICENSE.txt for
+Licensed under MIT License. Copyright (c) 2015 Sideshowcoder. See LICENSE.txt for
 further details.

@@ -1,5 +1,4 @@
 /.bundle
-bin
 /.env
 /log/*.log
 /tmp

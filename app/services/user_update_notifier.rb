@@ -4,7 +4,7 @@ class UserUpdateNotifier
   end
 
   def notify
-    ReportMailer.daily(@user.email, non_empty_reports).deliver if has_reports?
+    ReportMailer.daily(@user.email, non_empty_reports).deliver_now if has_reports?
   end
 
   private
