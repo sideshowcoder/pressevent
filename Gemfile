@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+ruby '2.3.1'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -36,5 +36,6 @@ group :development, :test do
   gem 'pry'
   gem 'vcr'
   gem 'launchy'
+  gem 'zeus', require: false
   gem 'mailcatcher', require: false
 end
